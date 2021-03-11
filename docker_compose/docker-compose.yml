@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build: ./nginx
+    volumes: 
+      - /Users/sakumashun/projects/tech_camp/docker_compose/nginx/html:/usr/share/nginx/html
+    ports: 
+      - "8000:80"
+  app:
+    build: ./flask
+    volumes: 
+      - /Users/sakumashun/projects/tech_camp/docker_compose/flask/app:/app
+    ports: 
+      - "8000:5000"
