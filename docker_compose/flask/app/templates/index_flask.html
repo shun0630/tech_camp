@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>wordトップ</title>
+</head>
+<body>
+	<h1>hello world</h1>
+	<form method="POST" action="/word">
+		<input type="text" name="word">
+		<input type="submit" name="送信">
+	</form>
+	<h2>アップロードされた言葉</h2>
+	{% for i in data %}
+		<p>ワード；　「{{i.word}}」</p>
+	{% else %}
+		<p>何もアップロードされていません</p>
+	{% endfor %}
+
+
+
+	<form method="POST" action="/reset">
+		<button type="submit">リセット</button>
+	</form>	
+
+</body>
+</html>
